@@ -1,0 +1,6 @@
+@ASP_API_HostAddress = http://localhost:5284
+
+GET {{ASP_API_HostAddress}}/api/
+Accept: application/json
+
+###
