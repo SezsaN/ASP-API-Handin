@@ -95,4 +95,28 @@ public class SubscriberController(DataContext context) : ControllerBase
     }
     #endregion
 
+    #region GET
+
+    [HttpGet]
+	public async Task<IActionResult> GetAll()
+    {
+		var subscribers = await _context.Subscribers.ToListAsync();
+
+		return Ok(subscribers);
+	}
+
+    [HttpGet("{id}")]
+	public async Task<IActionResult> GetOne(int id)
+    {
+		var subscriber = await _context.Subscribers.FindAsync(id);
+
+		if (subscriber == null)
+        {
+			return NotFound("Subscriber not found");
+		}
+
+		return Ok(subscriber);
+	}
+
+	#endregion
 }
