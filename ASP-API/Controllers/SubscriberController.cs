@@ -1,4 +1,5 @@
-﻿using Infrastructure.Contexts;
+﻿using ASP_API.Filters;
+using Infrastructure.Contexts;
 using Infrastructure.Entities;
 using Infrastructure.Models;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +17,7 @@ public class SubscriberController(DataContext context) : ControllerBase
     #region CREATE
 
     [HttpPost]
+    [UseApiKey]
     public async Task<IActionResult> Create(SubscriberDto dto)
     {
         if (ModelState.IsValid)
