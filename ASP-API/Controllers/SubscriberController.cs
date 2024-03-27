@@ -69,6 +69,7 @@ public class SubscriberController(DataContext context) : ControllerBase
     }
 
     [HttpDelete("email")]
+    [UseApiKey]
     public async Task<IActionResult> DeleteWithEmail(string email)
     {
         var result = await FindByEmail(email);

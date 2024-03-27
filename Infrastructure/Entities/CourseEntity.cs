@@ -22,4 +22,6 @@ public class CourseEntity
 
     public string? CoursePictureUrl { get; set; }
 
+    public virtual ICollection<SavedCoursesEntity> SavedCourses { get; set; } = new List<SavedCoursesEntity>();
+
 }

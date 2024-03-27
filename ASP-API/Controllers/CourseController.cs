@@ -1,4 +1,5 @@
-﻿using Infrastructure.Contexts;
+﻿using ASP_API.Filters;
+using Infrastructure.Contexts;
 using Infrastructure.Entities;
 using Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class CourseController(DataContext context) : ControllerBase
     {
         private readonly DataContext _context = context;
