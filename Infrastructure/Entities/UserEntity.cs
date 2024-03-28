@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Entities;
+﻿using System.Text.Json.Serialization;
+
+namespace Infrastructure.Entities;
 
 public class UserEntity
 {
@@ -6,5 +8,6 @@ public class UserEntity
 
     public string Email { get; set; } = null!;
 
+    [JsonIgnore]
     public virtual ICollection<SavedCoursesEntity> SavedCourses { get; set; } = new List<SavedCoursesEntity>();
 }

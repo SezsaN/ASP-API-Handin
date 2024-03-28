@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
-
-
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -126,6 +124,23 @@ namespace WebAPI.Controllers
             await _context.SaveChangesAsync();
 
             return Ok("Course was deleted");
+        }
+
+        [HttpDelete]
+
+        public async Task<IActionResult> DeleteAll()
+        {
+            var courses = await _context.Courses.ToListAsync();
+
+            if (courses.Count == 0)
+            {
+                return NotFound("No courses found");
+            }
+
+            _context.Courses.RemoveRange(courses);
+            await _context.SaveChangesAsync();
+
+            return Ok("All courses were deleted");
         }
         #endregion
     }
