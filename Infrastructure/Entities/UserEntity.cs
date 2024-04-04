@@ -10,4 +10,6 @@ public class UserEntity
 
     [JsonIgnore]
     public virtual ICollection<SavedCoursesEntity> SavedCourses { get; set; } = new List<SavedCoursesEntity>();
+    [JsonIgnore]
+    public virtual ICollection<MyCoursesEntity> MyCourses { get; set; } = new List<MyCoursesEntity>();
 }

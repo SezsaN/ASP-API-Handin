@@ -24,4 +24,6 @@ public class CourseEntity
 
     public virtual ICollection<SavedCoursesEntity> SavedCourses { get; set; } = new List<SavedCoursesEntity>();
 
+    public virtual ICollection<MyCoursesEntity> MyCourses { get; set; } = new List<MyCoursesEntity>();
+
 }
