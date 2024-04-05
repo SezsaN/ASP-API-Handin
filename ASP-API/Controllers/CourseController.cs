@@ -2,6 +2,7 @@
 using Infrastructure.Contexts;
 using Infrastructure.Entities;
 using Infrastructure.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -11,6 +12,10 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [UseApiKey]
+   
+
+ 
     
     public class CourseController(DataContext context) : ControllerBase
     {
